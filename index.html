@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ozone.AI — Transforming Business with AI Automation</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    /* Client group header — new for OzoneAI project grouping */
+    .client-group {
+      margin-bottom: 0.5rem;
+      margin-top: 2.5rem;
+    }
+    .client-group:first-of-type {
+      margin-top: 0;
+    }
+    .client-group-header {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 1.25rem;
+    }
+    .client-group-label {
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      color: var(--accent);
+      letter-spacing: 0.08em;
+      white-space: nowrap;
+    }
+    .client-group-line {
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+    .client-group .project-card {
+      margin-bottom: 1.25rem;
+    }
+
+    /* Services grid */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+      gap: 1.5rem;
+    }
+    .service-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 1.5rem 1.5rem 1.25rem;
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .service-card:hover {
+      border-color: var(--border-accent);
+      background: var(--bg-card-hover);
+    }
+    .service-icon {
+      font-size: 1.4rem;
+      margin-bottom: 0.75rem;
+      line-height: 1;
+    }
+    .service-name {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 0.5rem;
+      letter-spacing: -0.01em;
+    }
+    .service-desc {
+      font-size: 0.82rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    /* About stats */
+    .about-stats {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      margin-bottom: 2rem;
+    }
+    .about-stat {
+      background: var(--bg-card);
+      border: 1px solid var(--border-accent);
+      border-radius: var(--radius);
+      padding: 0.85rem 1.25rem;
+    }
+    .about-stat-num {
+      font-family: var(--mono);
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: var(--accent);
+      margin-bottom: 0.15rem;
+    }
+    .about-stat-label {
+      font-size: 0.78rem;
+      color: var(--text-secondary);
+    }
+    .about-grid {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 2rem 3rem;
+      align-items: start;
+    }
+    .why-list {
+      padding: 0;
+      list-style: none;
+    }
+    .why-list li {
+      font-size: 0.875rem;
+      color: var(--text-secondary);
+      padding: 0.45rem 0;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+    .why-list li::before {
+      content: '→';
+      color: var(--accent);
+      font-family: var(--mono);
+      font-size: 0.8rem;
+    }
+    .why-list li:last-child {
+      border-bottom: none;
+    }
+
+    @media (max-width: 700px) {
+      .about-grid { grid-template-columns: 1fr; }
+      .services-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <span class="nav-logo">Ozone<span class="dot">.</span>AI</span>
+    <ul class="nav-links">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#skills">Stack</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-inner">
+      <p class="hero-eyebrow">AI AUTOMATION</p>
+      <h1 class="hero-title">Transforming Business<br />Processes with AI.</h1>
+      <p class="hero-sub">
+        Built for enterprises, startups, and growth-stage companies seeking practical AI adoption.
+        We help organisations leverage AI to improve efficiency, reduce manual effort, and make smarter
+        decisions through tailored machine learning solutions.
+      </p>
+      <div class="hero-stats">
+        <div class="stat">
+          <span class="stat-num">10k+</span>
+          <span class="stat-label">samples processed / day</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num">50k+</span>
+          <span class="stat-label">documents processed / day</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num">75%</span>
+          <span class="stat-label">pipeline latency reduction</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="section section--dark" id="about">
+    <div class="container">
+      <h2 class="section-title">Who We Are</h2>
+      <p class="section-note">Led by IIM Ahmedabad and IIT alumni — a global delivery team with 10+ years of AI expertise.</p>
+
+      <div class="about-grid">
+        <div class="about-stats">
+          <div class="about-stat">
+            <div class="about-stat-num">10+ Years</div>
+            <div class="about-stat-label">of AI Expertise</div>
+          </div>
+          <div class="about-stat">
+            <div class="about-stat-num">3 Continents</div>
+            <div class="about-stat-label">Europe, North America &amp; Asia</div>
+          </div>
+          <div class="about-stat">
+            <div class="about-stat-num">IIM &amp; IIT</div>
+            <div class="about-stat-label">Alumni-Led Leadership</div>
+          </div>
+        </div>
+        <div>
+          <p style="font-size:0.92rem; color:var(--text-secondary); margin-bottom:1.5rem; line-height:1.75;">
+            Ozone.AI combines deep AI expertise with a global delivery mindset. Our team of experienced
+            engineers and AI specialists has spent over a decade building intelligent solutions that solve
+            real business challenges — from idea to full production deployment.
+          </p>
+          <ul class="why-list">
+            <li>10+ Years of AI Expertise</li>
+            <li>Business First — Custom Solutions</li>
+            <li>Global Delivery Team</li>
+            <li>Scalable &amp; Future Ready</li>
+            <li>End-to-End Support — Idea to Deployment</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="section" id="services">
+    <div class="container">
+      <h2 class="section-title">AI Solutions Designed Around Your Business</h2>
+      <p class="section-note">From strategy to deployment — end-to-end AI capabilities tailored to your unique challenges.</p>
+
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon">💡</div>
+          <div class="service-name">AI Strategy &amp; Consulting</div>
+          <div class="service-desc">Define your AI roadmap and identify the highest-impact opportunities in your business.</div>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🤖</div>
+          <div class="service-name">Generative AI Solutions</div>
+          <div class="service-desc">Custom LLM-powered applications, assistants, and workflows built for your enterprise.</div>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">📄</div>
+          <div class="service-name">Document Intelligence</div>
+          <div class="service-desc">Automate extraction, classification, and validation of data from any document type.</div>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">👁️</div>
+          <div class="service-name">Computer Vision</div>
+          <div class="service-desc">Visual inspection, defect detection, surveillance, and retail analytics at scale.</div>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🗣️</div>
+          <div class="service-name">Natural Language Processing</div>
+          <div class="service-desc">Intelligent text understanding, sentiment analysis, and conversational AI systems.</div>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">📈</div>
+          <div class="service-name">Predictive Analytics</div>
+          <div class="service-desc">Forecast demand, detect fraud, and drive smarter decisions with ML models.</div>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">⚙️</div>
+          <div class="service-name">Process Automation</div>
+          <div class="service-desc">Eliminate repetitive tasks and connect your systems with intelligent automation pipelines.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section class="section section--dark" id="projects">
+    <div class="container">
+      <h2 class="section-title">Production Projects</h2>
+      <p class="section-note">All work is production-deployed. Code is proprietary — descriptions reflect architecture, approach, and measurable outcomes.</p>
+
+      <!-- ── CLIENT GROUP 1 ── -->
+      <div class="client-group">
+        <div class="client-group-header">
+          <span class="client-group-label">U.S.-BASED BIOTECH / FOOD-SAFETY LAB COMPANY</span>
+          <div class="client-group-line"></div>
+        </div>
+
+        <!-- Project 1.1 -->
+        <div class="project-card" id="p1">
+          <div class="project-header">
+            <div>
+              <span class="project-tag">Computer Vision · PyTorch · FastAPI</span>
+              <h3 class="project-title">Automated Microbial Colony Detection &amp; Classification</h3>
+            </div>
+            <span class="project-index">01</span>
+          </div>
+          <p class="project-desc">
+            Designed and deployed a fully automated AI system to detect, count, and classify microbial colonies from petrifilm lab samples — replacing an entire team of manual lab analysts with a GPU-accelerated ML pipeline.
+          </p>
+          <div class="project-detail-grid">
+            <div class="detail-block">
+              <h4>Problem</h4>
+              <p>Lab analysts manually counted colonies on petrifilm plates across multiple test types — Aerobic Count, Yeast &amp; Mold, E. coli, Coliform, Enterobacteria, Lactobacillus, B. cereus, and others. Manual counts were slow, error-prone, and fundamentally limited in throughput.</p>
+            </div>
+            <div class="detail-block">
+              <h4>Solution</h4>
+              <p>Trained Vision Transformers combined with CLIP embedding models and custom PyTorch classifiers to accurately count colonies and handle edge cases like TNTC (Too Numerous To Count) plates. A mechanical imaging bot captures petrifilm images and sends them to the ML system via a FastAPI endpoint, returning structured colony count reports in real time.</p>
+            </div>
+            <div class="detail-block">
+              <h4>Impact</h4>
+              <ul>
+                <li>Accuracy: <strong>90–100%</strong> across all petrifilm types</li>
+                <li>Throughput: <strong>10,000+ samples/day</strong> vs. &lt;1,000 manually</li>
+                <li>Infrastructure cost: <strong>&lt;$200/month</strong> on AWS GPU — vs. a 20-person analyst team</li>
+                <li>Zero marginal cost at higher volumes — scales horizontally</li>
+              </ul>
+            </div>
+            <div class="detail-block">
+              <h4>Stack</h4>
+              <p>Vision Transformers, CLIP, PyTorch, FastAPI, AWS GPU instances</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 1.2 -->
+        <div class="project-card" id="p2">
+          <div class="project-header">
+            <div>
+              <span class="project-tag">LLM · NL-to-SQL · Data Analytics</span>
+              <h3 class="project-title">Natural Language Analytics Platform for Internal Teams</h3>
+            </div>
+            <span class="project-index">02</span>
+          </div>
+          <p class="project-desc">
+            Built a chat-based analytics system that lets non-technical teams — operations, sales, customer support, and analysts — query live databases and generate visualisations using plain English, with no SQL or coding required.
+          </p>
+          <div class="project-detail-grid">
+            <div class="detail-block">
+              <h4>Problem</h4>
+              <p>Business teams were dependent on developers or analysts to pull data from MongoDB and MySQL databases. Reporting cycles were slow, and teams lacked real-time visibility into their own operational metrics.</p>
+            </div>
+            <div class="detail-block">
+              <h4>Solution</h4>
+              <p>Integrated the Claude LLM API to accept natural language queries, generate corresponding Python code and database queries, and execute them in a secure sandbox environment connected to production databases. Results — including interactive Plotly charts, tables, and JSON outputs — are rendered directly in the UI for users to explore and export.</p>
+            </div>
+            <div class="detail-block">
+              <h4>Impact</h4>
+              <ul>
+                <li>Any team member can self-serve data queries — no SQL knowledge needed</li>
+                <li>Eliminated bottleneck of routing every data request through engineering</li>
+                <li>Exports (charts, tables) plug directly into reports and presentations</li>
+                <li>Code execution runs in an isolated sandbox — no direct DB access exposure</li>
+              </ul>
+            </div>
+            <div class="detail-block">
+              <h4>Stack</h4>
+              <p>Claude LLM API, Python, Plotly, MongoDB, MySQL, FastAPI, sandboxed execution environment</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 1.3 -->
+        <div class="project-card" id="p1-3">
+          <div class="project-header">
+            <div>
+              <span class="project-tag">Document AI · LLM · Data Automation</span>
+              <h3 class="project-title">Automated Lab Result Extraction &amp; Unit Normalisation</h3>
+            </div>
+            <span class="project-index">03</span>
+          </div>
+          <p class="project-desc">
+            Built an AI system that reads laboratory reports in any format, extracts each test and its result, validates the units, and converts values into the units each customer specifies — replacing manual data entry from lab documents entirely.
+          </p>
+          <div class="project-detail-grid">
+            <div class="detail-block">
+              <h4>Problem</h4>
+              <p>Lab reports arrived in many formats: different labs, layouts, scanned PDFs, tables, and free text. Each used its own naming and unit conventions. Analysts manually read every report, keyed results into systems, and converted units by hand to match customer requirements. The work was slow and repetitive, and a single wrong conversion could invalidate a result.</p>
+            </div>
+            <div class="detail-block">
+              <h4>Solution</h4>
+              <p>Developed a document extraction pipeline that handles any lab report layout and identifies test parameters, result values, and their reported units. A validation layer checks each unit against the expected unit for that parameter and flags mismatches or ambiguous entries. A rules-based conversion engine then normalises every value into the customer's specified units, returning structured output ready for direct system ingestion.</p>
+            </div>
+            <div class="detail-block">
+              <h4>Impact</h4>
+              <ul>
+                <li>Eliminated manual data entry from lab reports entirely</li>
+                <li>Works across varied document formats — no per-lab templates needed</li>
+                <li>Automatic unit validation catches inconsistencies before downstream systems</li>
+                <li>Customer-specific unit conversion removes a recurring source of human error</li>
+                <li>Processes <strong>1,000 reports/day</strong> at <strong>90%</strong> field-level accuracy</li>
+              </ul>
+            </div>
+            <div class="detail-block">
+              <h4>Stack</h4>
+              <p>OCR, LLM, Python, FastAPI</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 1.4 -->
+        <div class="project-card" id="p1-4">
+          <div class="project-header">
+            <div>
+              <span class="project-tag">Agentic AI · LLM · Code Generation</span>
+              <h3 class="project-title">Multi-Agent System for Automated Pricing Logic Code Generation</h3>
+            </div>
+            <span class="project-index">04</span>
+          </div>
+          <p class="project-desc">
+            Built an agentic system that turns plain-English business pricing rules into production-ready code with unit tests. A coding agent and a QA agent collaborate iteratively, with a human reviewing the final output before deployment.
+          </p>
+          <div class="project-detail-grid">
+            <div class="detail-block">
+              <h4>Problem</h4>
+              <p>Pricing logic changes often: discounts, tiers, surcharges, customer-specific rules. Each change had to be passed from business teams to developers, interpreted, coded, and tested by hand. Requirements were often incomplete or ambiguous, leading to rework, slow turnaround, and pricing bugs reaching production.</p>
+            </div>
+            <div class="detail-block">
+              <h4>Solution</h4>
+              <p>Designed a multi-agent workflow where a user describes pricing logic in natural language. The system infers the relevant data schema and asks clarifying questions to resolve gaps before writing any code. A coding agent generates the pricing implementation; a QA agent writes unit tests and verifies the code against the confirmed requirements. A human reviews the final output before deployment.</p>
+            </div>
+            <div class="detail-block">
+              <h4>Impact</h4>
+              <ul>
+                <li>Business users can specify pricing changes directly in plain English</li>
+                <li>Clarifying questions surface missing requirements up front, reducing rework</li>
+                <li>Every generated function ships with its own unit tests</li>
+                <li>Human review retained as the final gate before production</li>
+                <li>Turnaround for pricing changes cut from <strong>5 days to minutes</strong></li>
+              </ul>
+            </div>
+            <div class="detail-block">
+              <h4>Stack</h4>
+              <p>Claude API, Python, pytest, FastAPI</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- ── CLIENT GROUP 2 ── -->
+      <div class="client-group">
+        <div class="client-group-header">
+          <span class="client-group-label">U.S.-BASED LOGISTICS &amp; TRADE TECH COMPANY</span>
+          <div class="client-group-line"></div>
+        </div>
+
+        <!-- Project 2.1 -->
+        <div class="project-card" id="p3">
+          <div class="project-header">
+            <div>
+              <span class="project-tag">Document AI · NLP · Computer Vision</span>
+              <h3 class="project-title">AI-Powered Document Data Extraction at Scale</h3>
+            </div>
+            <span class="project-index">03</span>
+          </div>
+          <p class="project-desc">
+            Led end-to-end development of an AI service for intelligent data extraction from logistics and trade documents — processing 50,000 documents per day with high field-level accuracy across 100+ structured data points.
+          </p>
+          <div class="project-detail-grid">
+            <div class="detail-block">
+              <h4>Problem</h4>
+              <p>Logistics operations required manual extraction of structured data from high-volume, varied document types — Bills of Lading, Arrival Notices, ISFs, Invoices, Packing Lists, and Customs documents. Manual extraction was a critical bottleneck in the data ingestion pipeline.</p>
+            </div>
+            <div class="detail-block">
+              <h4>Solution</h4>
+              <p>Built a multi-model AI pipeline combining Detectron2 for document layout detection, spaCy-based NER models for entity recognition, Google T5 for structured text understanding, and GPT-4 Vision for visually complex documents. Developed a unified API layer for organisation-wide access to all AI extraction services.</p>
+            </div>
+            <div class="detail-block">
+              <h4>Impact</h4>
+              <ul>
+                <li>Extracts <strong>100+ fields</strong> per document — ETA, ETD, Consignee, Shipper, Manufacturer, Port of Lading, Country of Origin, Invoice Number, and more</li>
+                <li>Processes <strong>50,000 documents/day</strong> in production</li>
+                <li>Data ingestion pipeline latency reduced by <strong>75%</strong></li>
+                <li>Single unified API layer maintained across the organisation</li>
+              </ul>
+            </div>
+            <div class="detail-block">
+              <h4>Stack</h4>
+              <p>Detectron2, spaCy, Google T5, GPT-4 Vision, Python, FastAPI</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── CLIENT GROUP 3 ── -->
+      <div class="client-group">
+        <div class="client-group-header">
+          <span class="client-group-label">INDIA-BASED C.A FIRM</span>
+          <div class="client-group-line"></div>
+        </div>
+
+        <!-- Project 3.1 -->
+        <div class="project-card" id="p4">
+          <div class="project-header">
+            <div>
+              <span class="project-tag">PII Redaction · OCR · Compliance</span>
+              <h3 class="project-title">Automated PII Redaction System (DPDPA Compliant)</h3>
+            </div>
+            <span class="project-index">04</span>
+          </div>
+          <p class="project-desc">
+            Built a document redaction application for CA firms and banking clients to automatically detect and redact personally identifiable information in compliance with India's Digital Personal Data Protection Act (DPDPA).
+          </p>
+          <div class="project-detail-grid">
+            <div class="detail-block">
+              <h4>Problem</h4>
+              <p>CA firms and banks handle large volumes of sensitive client documents containing PAN, Aadhaar, bank account details, GST numbers, signatures, and photographs. Manual redaction before sharing documents was time-consuming and prone to missed fields.</p>
+            </div>
+            <div class="detail-block">
+              <h4>Solution</h4>
+              <p>Built a FastAPI-backed web application where users upload documents processed through an OCR pipeline followed by AI-based PII detection using Microsoft Presidio — an open-source framework for detecting, masking, and anonymising sensitive data across text, images, and structured data. Supports custom keyword-based redaction rules, document splitting, and merging.</p>
+            </div>
+            <div class="detail-block">
+              <h4>Impact</h4>
+              <ul>
+                <li>Fully automated redaction of PAN, Aadhaar, bank info, GST, photos, and signatures</li>
+                <li>DPDPA-aligned workflow with audit-ready outputs</li>
+                <li>Custom keyword rules allow clients to extend redaction beyond standard PII</li>
+                <li>Non-technical users can operate the entire workflow via a simple UI</li>
+              </ul>
+            </div>
+            <div class="detail-block">
+              <h4>Stack</h4>
+              <p>FastAPI, Microsoft Presidio, OCR, Python, HTML/CSS</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section class="section" id="skills">
+    <div class="container">
+      <h2 class="section-title">Technology Stack</h2>
+      <p class="section-note">Best-in-class tools and frameworks for robust, scalable AI solutions.</p>
+      <div class="skills-grid">
+        <div class="skill-group">
+          <h4>Languages</h4>
+          <div class="skill-tags">
+            <span>Python</span><span>SQL</span><span>C++</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <h4>ML &amp; AI</h4>
+          <div class="skill-tags">
+            <span>PyTorch</span><span>TensorFlow</span><span>Scikit-learn</span>
+            <span>Detectron2</span><span>spaCy</span><span>Langchain</span>
+            <span>Huggingface</span><span>CLIP</span><span>Vision Transformers</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <h4>Domains</h4>
+          <div class="skill-tags">
+            <span>Computer Vision</span><span>NLP</span><span>API Development</span>
+            <span>Document AI</span><span>Predictive Analytics</span><span>Gen AI</span>
+            <span>ML Automation</span><span>RAG</span><span>Vector Databases</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <h4>Infrastructure &amp; APIs</h4>
+          <div class="skill-tags">
+            <span>FastAPI</span><span>AWS</span><span>Azure</span><span>GCP</span>
+            <span>Kafka</span><span>MongoDB</span><span>MySQL</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <h4>LLM &amp; NLP</h4>
+          <div class="skill-tags">
+            <span>OpenAI</span><span>Claude</span><span>Deepseek</span>
+            <span>Gemini</span><span>Mistral</span><span>LayoutLM</span>
+            <span>Prompt Engineering</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!-- CONTACT -->
+<section class="section section--dark" id="contact">
+  <div class="container">
+    <h2 class="section-title">Let's Build Something Intelligent Together</h2>
+    <p class="section-note">Schedule a discovery conversation and explore how AI can create measurable value for your organisation.</p>
+
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:3rem; align-items:start;">
+
+      <!-- Left: why reach out -->
+      <div>
+        <ul style="list-style:none; padding:0;">
+          <li style="font-size:0.875rem; color:var(--text-secondary); padding:0.5rem 0; border-bottom:1px solid var(--border); display:flex; gap:0.6rem;">
+            <span style="color:var(--accent);">→</span> Identify quick-win automation opportunities
+          </li>
+          <li style="font-size:0.875rem; color:var(--text-secondary); padding:0.5rem 0; border-bottom:1px solid var(--border); display:flex; gap:0.6rem;">
+            <span style="color:var(--accent);">→</span> Get a tailored POC at no obligation
+          </li>
+          <li style="font-size:0.875rem; color:var(--text-secondary); padding:0.5rem 0; border-bottom:1px solid var(--border); display:flex; gap:0.6rem;">
+            <span style="color:var(--accent);">→</span> Work with a team that understands your industry
+          </li>
+          <li style="font-size:0.875rem; color:var(--text-secondary); padding:0.5rem 0; display:flex; gap:0.6rem;">
+            <span style="color:var(--accent);">→</span> Start small, scale fast with proven AI frameworks
+          </li>
+        </ul>
+        <p style="margin-top:2rem; font-size:0.8rem; color:var(--text-muted);">
+          Or email us directly:<br />
+          <a href="mailto:ozone.ai.solution@gmail.com" style="color:var(--accent);">ozone.ai.solution@gmail.com</a>
+        </p>
+      </div>
+
+      <!-- Right: form -->
+      <form id="contact-form" style="display:flex; flex-direction:column; gap:1rem;">
+        <div>
+          <label style="font-family:var(--mono); font-size:0.7rem; color:var(--accent); letter-spacing:0.06em; display:block; margin-bottom:0.4rem;">NAME</label>
+          <input type="text" name="name" required placeholder="Your name"
+            style="width:100%; background:var(--bg-card); border:1px solid var(--border); border-radius:var(--radius); padding:0.65rem 0.9rem; color:var(--text-primary); font-family:var(--sans); font-size:0.875rem; outline:none; transition:border-color 0.2s;"
+            onfocus="this.style.borderColor='var(--accent)'" onblur="this.style.borderColor='var(--border)'" />
+        </div>
+        <div>
+          <label style="font-family:var(--mono); font-size:0.7rem; color:var(--accent); letter-spacing:0.06em; display:block; margin-bottom:0.4rem;">EMAIL</label>
+          <input type="email" name="email" required placeholder="you@company.com"
+            style="width:100%; background:var(--bg-card); border:1px solid var(--border); border-radius:var(--radius); padding:0.65rem 0.9rem; color:var(--text-primary); font-family:var(--sans); font-size:0.875rem; outline:none; transition:border-color 0.2s;"
+            onfocus="this.style.borderColor='var(--accent)'" onblur="this.style.borderColor='var(--border)'" />
+        </div>
+        <div>
+          <label style="font-family:var(--mono); font-size:0.7rem; color:var(--accent); letter-spacing:0.06em; display:block; margin-bottom:0.4rem;">PROJECT INQUIRY</label>
+          <textarea name="inquiry" required rows="4" placeholder="Briefly describe what you're looking to build or automate..."
+            style="width:100%; background:var(--bg-card); border:1px solid var(--border); border-radius:var(--radius); padding:0.65rem 0.9rem; color:var(--text-primary); font-family:var(--sans); font-size:0.875rem; outline:none; resize:vertical; transition:border-color 0.2s;"
+            onfocus="this.style.borderColor='var(--accent)'" onblur="this.style.borderColor='var(--border)'"></textarea>
+        </div>
+        <button type="submit" class="cta-btn" style="width:100%; text-align:center; border:none; cursor:pointer;">
+          Send Inquiry
+        </button>
+        <p id="form-status" style="font-size:0.8rem; text-align:center; color:var(--text-muted); min-height:1.2em;"></p>
+      </form>
+
+    </div>
+  </div>
+</section>
+
+<script>
+  const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzHhYz_2o-4wJxtZ8AynAoUe5uUjMNTsQAngsvwVOVtr14-LNWpStCS-PV0sPBxPwLh/exec";
+
+  document.getElementById("contact-form").addEventListener("submit", async function(e) {
+    e.preventDefault();
+    const status = document.getElementById("form-status");
+    const btn = this.querySelector("button[type=submit]");
+    const data = {
+      name: this.name.value.trim(),
+      email: this.email.value.trim(),
+      inquiry: this.inquiry.value.trim()
+    };
+    btn.disabled = true;
+    btn.textContent = "Sending…";
+    try {
+      await fetch(SCRIPT_URL, {
+        method: "POST",
+        body: JSON.stringify(data)
+      });
+      status.style.color = "var(--accent)";
+      status.textContent = "✓ Message received — we'll be in touch shortly.";
+      this.reset();
+    } catch {
+      status.style.color = "#f87171";
+      status.textContent = "Something went wrong. Please email us directly.";
+    }
+    btn.disabled = false;
+    btn.textContent = "Send Inquiry";
+  });
+</script>
+
+  <footer class="footer">
+    <span>Ozone<span style="color:var(--accent)">.</span>AI — Automating. Optimizing. Scaling.</span>
+    <span>All project work is proprietary. Descriptions shared with permission or under NDA terms.</span>
+  </footer>
+
+</body>
+</html>
